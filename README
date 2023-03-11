@@ -1,12 +1,5 @@
 # Kacper Paczos
 
-#TODO
-nie działa prawidłowo lokalizacja użytkownika
-
- Satellite Hybrid
-
-satellite
-
 Funkcje mapy:
 
 Pokaząc punkty
@@ -14,13 +7,20 @@ ustawić punty
 rysowac ściezki między punktami.
 zmiana warstw // gotowe
 zoomowanie //gotwe?
+#TODO
+
 
 Strona główna
 Nowa wycieczka, punkty na mapie
-
+Usuwanie wycieczek, zdjec
+Lepsza galeria
+Powiazanie zdjec z punkatmi
 
 Potem wycieszka ma informacje i zdjecia
 
 Jeżeli nie zalgoowany, idz do login
 JEżeli zalgoowany, do strony głównej
+
+#menu musi byc sitcky
+
 
