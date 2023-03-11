@@ -59,8 +59,6 @@
       <div id="travels">
         <p>Brak zapisanych wycieczek!</p>
       </div>
-      <!-- DEBUG ONLY-->
-      <pre id="info"></pre>
     </main>
     <footer>
       <div class="hCenter">
@@ -108,8 +106,6 @@
           .setLngLat([e.lngLat["lng"], e.lngLat["lat"]])
           .addTo(map);
       }
-      document.getElementById("info").innerHTML =
-        JSON.stringify(e.point) + "<br />" + JSON.stringify(e.lngLat.wrap());
     });
 
     let layerList = document.getElementById("menu");
