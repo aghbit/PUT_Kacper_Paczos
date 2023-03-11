@@ -95,8 +95,6 @@
 
     map.on("click", function (e) {
       if (canMark) {
-
-
         console.log(e.lngLat["lat"]);
         var marker = new maplibregl.Marker()
           .setLngLat([e.lngLat["lng"], e.lngLat["lat"]])
@@ -220,8 +218,7 @@
   <!-- Travles-->
 
   <script>
-
-    // name/id, 
+    // name/id,
     var travel = [];
     var travels = [];
 
@@ -267,18 +264,35 @@
         let travelMarkers = document.createElement("div");
         travelMarkers.classList.add("flex-basis");
 
+        let btnRemove = document.createElement("button");
+        btnRemove.setAttribute("id", travel[0] + "_remove");
+        btnRemove.innerHTML = "Usuń";
+        btnRemove.classList.add("red-color");
+        btnRemove.name = travel[0] + "_remove";
+        btnRemove.onclick = function () {
+          let myname = this.name.substring(0, this.name.indexOf("_"));
+
+          let i = 0;
+          travels.forEach((travel) => {
+            if (travel[0] == myname) {
+              travels.splice(i,1);
+            }
+            i++;
+          });
+
+          renderTravels();
+        };
+
         let btnMarker = document.createElement("button");
         btnMarker.setAttribute("id", travel[0] + "_addMarker");
         btnMarker.innerHTML = "Zaznacz miejsce";
         btnMarker.classList.add("second-color");
         btnMarker.name = travel[0] + "_addMarker";
         btnMarker.onclick = function () {
-          
           if (canMark == false) {
-            
             this.classList.remove("second-color");
             this.classList.add("red-color");
-            canMark = true
+            canMark = true;
           } else {
             this.classList.remove("red-color");
             this.classList.add("second-color");
@@ -311,7 +325,7 @@
 
           travels.forEach((travel) => {
             if (travel[0] == myname) {
-              travel[3].push("./files/images/"+file[0]["name"]);
+              travel[3].push("./files/images/" + file[0]["name"]);
             }
           });
         });
@@ -406,6 +420,7 @@
         travelDiv.appendChild(travelDesc);
         travelDiv.appendChild(travelDate);
         travelDiv.appendChild(btn);
+        travelDiv.append(btnRemove);
         travelDiv.appendChild(travelMarkers);
         travelDiv.appendChild(travelPhotos);
         travelDiv.appendChild(uploadImge);
