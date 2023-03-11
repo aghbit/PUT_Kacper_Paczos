@@ -94,12 +94,8 @@
     );
 
     map.on("click", function (e) {
-      //var el = document.createElement("div");
       if (canMark) {
-        // add marker to map
-        //new maplibregl.Marker(el)
-        ///  .setLngLat(marker.geometry.coordinates)
-        //  .addTo(map);
+
 
         console.log(e.lngLat["lat"]);
         var marker = new maplibregl.Marker()
@@ -315,7 +311,7 @@
 
           travels.forEach((travel) => {
             if (travel[0] == myname) {
-              travel[3].push(file[0]["name"]);
+              travel[3].push("./files/images/"+file[0]["name"]);
             }
           });
         });
